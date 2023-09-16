@@ -39,6 +39,12 @@ public class PageController {
         return "bookList";
     }
 
+    @GetMapping("/users")
+    public String listUsers(Model model) {
+        model.addAttribute("users", userService.getUsers());
+        return "userList";
+    }
+
     @GetMapping("/add-book")
     public String showAddBookForm(Model model) {
         model.addAttribute("newBook", new Book());
