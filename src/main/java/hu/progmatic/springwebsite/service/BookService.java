@@ -11,7 +11,10 @@ import java.util.Random;
 public class BookService {
     private final List<Book> books = new ArrayList<>();
 
-    public BookService() {
+    private final Random randomGenerator;
+
+    public BookService(Random randomGenerator) {
+        this.randomGenerator = randomGenerator;
         // Példaadatokkal feltötjük - a jövőben ez nem így fog kinézni:)
         books.add(new Book("The Lord of The Rings", "J. R. R. Tolkien"));
         books.add(new Book("The Two Towers", "J. R. R. Tolkien"));
@@ -30,9 +33,9 @@ public class BookService {
         books.add(book);
     }
 
-    public Book RandomBookGenerator(){
-        Random random = new Random();
-        int randomIndex = random.nextInt(books.size());
-        return books.get(randomIndex);
+    public Book getRandomBook(){
+        return  books.get(randomGenerator.nextInt(this.books.size()));
     }
+
+
 }

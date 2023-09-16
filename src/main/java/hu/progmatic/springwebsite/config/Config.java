@@ -1,25 +1,16 @@
 package hu.progmatic.springwebsite.config;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
 import java.lang.annotation.Annotation;
+import java.util.Random;
 
-public class Config implements Configuration {
-    @Override
-    public boolean equals(Object obj) {
-        return false;
-    }
+@Configuration
+public class Config {
 
-    @Override
-    public int hashCode() {
-        return 0;
-    }
-
-    @Override
-    public String toString() {
-        return null;
-    }
-
-    @Override
-    public Class<? extends Annotation> annotationType() {
-        return null;
+    @Bean
+    public Random randomGenerator(){
+        return new Random();
     }
 }
