@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class BookService {
@@ -27,5 +28,11 @@ public class BookService {
 
     public void addBook(Book book) {
         books.add(book);
+    }
+
+    public Book RandomBookGenerator(){
+        Random random = new Random();
+        int randomIndex = random.nextInt(books.size());
+        return books.get(randomIndex);
     }
 }
