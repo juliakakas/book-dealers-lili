@@ -1,6 +1,7 @@
 package hu.progmatic.springwebsite.service;
 
 import hu.progmatic.springwebsite.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class UserService {
 
     private final Random randomGenerator;
 
+    @Autowired
     public UserService(Random randomGenerator) {
         this.randomGenerator = randomGenerator;
         users.add(new User("Lajos Kalmár","Budapest",01123));

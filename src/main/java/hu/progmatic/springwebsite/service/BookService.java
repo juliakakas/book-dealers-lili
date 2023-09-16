@@ -1,6 +1,7 @@
 package hu.progmatic.springwebsite.service;
 
 import hu.progmatic.springwebsite.model.Book;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class BookService {
 
     private final Random randomGenerator;
 
+    @Autowired
     public BookService(Random randomGenerator) {
         this.randomGenerator = randomGenerator;
         // Példaadatokkal feltötjük - a jövőben ez nem így fog kinézni:)
